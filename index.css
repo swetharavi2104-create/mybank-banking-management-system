@@ -1,0 +1,743 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+/* ========================================== */
+/* ADMIN EDIT USER */
+/* ========================================== */
+
+.admin-edit-user-page {
+    width: 550px;
+    max-width: 95%;
+    margin: 30px auto;
+}
+
+.admin-edit-user-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.10);
+}
+
+.admin-edit-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+    background: #eff6ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+.admin-edit-user-card h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.admin-edit-user-card > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+
+.admin-edit-user-card .form-group {
+    margin-bottom: 17px;
+}
+
+.admin-edit-user-card .form-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #334155;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.admin-edit-user-card .form-group input {
+    width: 100%;
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.admin-edit-user-card .form-group input:focus {
+    border-color: #2563eb;
+}
+
+.admin-edit-user-card .form-group input[readonly] {
+    background: #f8fafc;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+/* UPDATE BUTTON */
+
+.admin-edit-user-card form > button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.admin-edit-user-card form > button:hover {
+    background: #1d4ed8;
+}
+
+.admin-edit-user-card form > button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .admin-edit-user-page {
+        width: 95%;
+    }
+
+    .admin-edit-user-card {
+        padding: 22px;
+    }
+
+    .admin-edit-user-card h1 {
+        font-size: 24px;
+    }
+}
+/* =========================================
+   TRANSFER PAGE
+========================================= */
+
+.transfer-page {
+    min-height: 100vh;
+
+    padding: 30px 15px;
+
+    box-sizing: border-box;
+
+    background: #f8fafc;
+}
+
+.transfer-container {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.transfer-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.transfer-header h1 {
+    margin: 0;
+
+    color: #1e3a8a;
+
+    font-size: 30px;
+}
+
+.transfer-header p {
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.transfer-back-btn {
+    padding: 11px 16px;
+
+    border-radius: 8px;
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.transfer-back-btn:hover {
+    background: #c7d2fe;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.transfer-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    text-align: center;
+}
+
+.transfer-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+
+    font-size: 34px;
+}
+
+.transfer-card h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 26px;
+}
+
+.transfer-subtitle {
+    margin: 8px 0 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.transfer-form-group {
+    max-width: 500px;
+
+    margin: 0 auto 18px;
+
+    text-align: left;
+}
+
+.transfer-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.transfer-form-group input,
+.transfer-form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.transfer-form-group input {
+    padding: 13px 14px;
+}
+
+.transfer-form-group textarea {
+    padding: 13px 14px;
+
+    resize: vertical;
+
+    min-height: 90px;
+
+    font-family: inherit;
+}
+
+.transfer-form-group input::placeholder,
+.transfer-form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.transfer-form-group input:focus,
+.transfer-form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+.transfer-form-group input:disabled,
+.transfer-form-group textarea:disabled {
+    background: #f1f5f9;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   AMOUNT INPUT
+========================================= */
+
+.transfer-input-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: white;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.transfer-input-wrapper:focus-within {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+.transfer-input-wrapper span {
+    padding-left: 15px;
+
+    color: #475569;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+.transfer-input-wrapper input {
+    width: 100%;
+
+    padding: 14px 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #0f172a;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.transfer-btn {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.transfer-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.transfer-btn:active {
+    transform: translateY(0);
+}
+
+.transfer-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   ERROR / SUCCESS
+========================================= */
+
+.transfer-error,
+.transfer-success {
+    max-width: 500px;
+
+    margin: 0 auto 18px;
+
+    padding: 11px 13px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+.transfer-error {
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    border: 1px solid #fecaca;
+}
+
+.transfer-success {
+    background: #dcfce7;
+
+    color: #166534;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* =========================================
+   RESULT
+========================================= */
+
+.transfer-result {
+    max-width: 500px;
+
+    margin: 22px auto 0;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    text-align: left;
+}
+
+.transfer-result h3 {
+    margin: 0 0 15px;
+
+    color: #1e40af;
+
+    font-size: 17px;
+}
+
+.transfer-result-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #dbeafe;
+}
+
+.transfer-result-row:last-child {
+    border-bottom: none;
+}
+
+.transfer-result-row span {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+.transfer-result-row strong {
+    color: #1e40af;
+
+    font-size: 13px;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.transfer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+
+    flex-wrap: wrap;
+}
+
+.transfer-links a {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.transfer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.transfer-footer {
+    margin: 22px 0 0;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .transfer-page {
+        padding: 20px 12px;
+    }
+
+    .transfer-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .transfer-header h1 {
+        font-size: 26px;
+    }
+
+    .transfer-back-btn {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .transfer-card {
+        padding: 25px 20px;
+    }
+
+    .transfer-card h2 {
+        font-size: 23px;
+    }
+
+    .transfer-result-row {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+    .transfer-result-row strong {
+        text-align: left;
+    }
+}
